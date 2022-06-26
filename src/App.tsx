@@ -1,25 +1,23 @@
-import { useQuery } from 'react-query'
 import { Spinner } from './Components/Spinner'
 import { Sidebar } from './Components/Sidebar'
-import sentiloApi from './services/sentilo'
+import { useSensors } from './services/hooks/useSensors'
+import { reduceSensors } from './utils/reduceSensors'
 
 function App() {
-  const { isLoading, error } = useQuery('sensors', async () => {
-    const { data } = await sentiloApi.get<Sentilo.ISensors[]>(
-      `/data/${import.meta.env.VITE_APP_SENTILO_UTFPR_PROVIDERID}?limit=1000`
-    )
-
-    return data
-  })
+  const { data, isLoading, isFetching, error, refetch } = useSensors()
 
   return isLoading ? (
     <div className="h-screen flex items-center justify-center">
-      <Spinner />
+      <Spinner className="spinner-border animate-spin inline-block w-12 h-12 border-4 rounded-full" />
     </div>
   ) : error ? (
     <h1>Falha ao obter os sensores</h1>
   ) : (
-    <Sidebar />
+    <Sidebar
+      isFetching={!isLoading && isFetching}
+      handleRefetch={() => refetch()}
+      sensors={reduceSensors(data || [])}
+    />
   )
 }
 
