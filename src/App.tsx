@@ -1,5 +1,6 @@
 import { Spinner } from './Components/Spinner'
 import { Sidebar } from './Components/Sidebar'
+import { LeafletMap } from './Components/LeafletMap'
 import { useSensors } from './services/hooks/useSensors'
 import { reduceSensors } from './utils/reduceSensors'
 
@@ -13,11 +14,15 @@ function App() {
   ) : error ? (
     <h1>Falha ao obter os sensores</h1>
   ) : (
-    <Sidebar
-      isFetching={!isLoading && isFetching}
-      handleRefetch={() => refetch()}
-      sensors={reduceSensors(data || [])}
-    />
+    <div className="flex flex-row">
+      <Sidebar
+        isFetching={!isLoading && isFetching}
+        handleRefetch={() => refetch()}
+        sensors={reduceSensors(data || [])}
+      />
+
+      <LeafletMap />
+    </div>
   )
 }
 
