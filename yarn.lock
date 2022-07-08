@@ -368,10 +368,10 @@
   resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-7946.0.8.tgz#30744afdb385e2945e22f3b033f897f76b1f12ca"
   integrity sha512-1rkryxURpr6aWP7R786/UQOkJ3PcpQiWkAXBmdWc7ryFWqN6a4xfK7BtjXvFBKO9LjQ+MWQSWxYeZX1OApnArA==
 
-"@types/leaflet-routing-machine@^3.2.3":
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/@types/leaflet-routing-machine/-/leaflet-routing-machine-3.2.3.tgz#73a2b4c67363f8d9c6187bb9b0ffb9b0594f4e81"
-  integrity sha512-otFJqBO96AUxanwQAQfP+6fot91XS6FML+0o9O6z+0WveTuQO13Hs32G/TMWPE1q57us+vJysNlSWkhBPDh1jQ==
+"@types/leaflet-routing-machine@^3.2.4":
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/@types/leaflet-routing-machine/-/leaflet-routing-machine-3.2.4.tgz#fd302ffde7ec5eb834d4e47c9c5b4ec0c04fbf54"
+  integrity sha512-CFcWghU+eDel/zY2Q1u1tI6rxL2V6SfJ85/prt7s2QEw8tK+OkH+o5PLm/7eYsZH86i30ff5rmEk8GN1nZ9ODg==
   dependencies:
     "@types/leaflet" "*"
 
