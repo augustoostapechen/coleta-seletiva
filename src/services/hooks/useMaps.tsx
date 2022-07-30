@@ -24,7 +24,7 @@ const MapProvider = ({ children }: any) => {
 
     const routingControl = new Routing.Control({
       waypoints,
-      // plan: myPlan,
+      plan: myPlan,
       lineOptions: {
         styles: [{ color: '#6FA1EC', weight: 4 }],
         extendToWaypoints: false,
