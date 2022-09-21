@@ -1,5 +1,5 @@
 import { useQuery } from "react-query"
-import sentiloApi from "../../sentilo"
+import { sentiloApi } from "../../sentilo"
 
 export async function getSensors(): Promise<Sentilo.ISensors[]> {
   const { data: { sensors } } = await sentiloApi.get(
