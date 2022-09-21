@@ -1,18 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { ReactQueryDevtools } from 'react-query/devtools'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
-import App from './App'
-import { WaypointsProvider } from './services/hooks/useWaypoints'
+import App from "./App";
+import { WaypointsProvider } from "./services/hooks/useWaypoints";
 
-import './styles/global.css'
-import 'tw-elements'
-import { MapProvider } from './services/hooks/useMaps'
+import "./styles/global.css";
+import "tw-elements";
+import { MapProvider } from "./services/hooks/useMaps";
+import { getSensors } from "./services/hooks/queries/getSensor";
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+getSensors();
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <WaypointsProvider>
@@ -23,4 +26,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       </WaypointsProvider>
     </QueryClientProvider>
   </React.StrictMode>
-)
+);
